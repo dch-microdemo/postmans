@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "4b644a6b-3aa1-4fd0-84a1-5a934e7f1957",
+		"name": "JWT_Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/auth/oauth/token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "aplicacion",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "webclient",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "diego.admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/auth/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/v1/organizations/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTkyMDMwNDQsInVzZXJfbmFtZSI6ImRpZWdvLmFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiI3NzBmYmQwZC00ZjEyLTQ5ZjQtYWE5My0xOWYxZDhhYTdjMjYiLCJjbGllbnRfaWQiOiJhcGxpY2FjaW9uIiwic2NvcGUiOlsid2ViY2xpZW50Il19.6h_jSdld4zD7F9ynr6gUyVo-guUaRjKpIwLFdZoXsxI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n    \t\"name\": \"HR-PowerSuite5\",\n        \"contactName\": \"Doug Drewry\",\n        \"contactEmail\": \"doug.drewry@hr.com\",\n        \"contactPhone\": \"920-555-1212\"\n    }"
+				},
+				"url": {
+					"raw": "localhost:8081/v1/organizations/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"organizations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTkyMDMwNDQsInVzZXJfbmFtZSI6ImRpZWdvLmFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiI3NzBmYmQwZC00ZjEyLTQ5ZjQtYWE5My0xOWYxZDhhYTdjMjYiLCJjbGllbnRfaWQiOiJhcGxpY2FjaW9uIiwic2NvcGUiOlsid2ViY2xpZW50Il19.6h_jSdld4zD7F9ynr6gUyVo-guUaRjKpIwLFdZoXsxI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organizations",
+						"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+						"licenses",
+						"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
